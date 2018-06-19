@@ -1,0 +1,106 @@
+﻿<Page
+    x:Class="Carousel.SecondCarousel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Carousel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="SecondCarousel Template" 
+                   Grid.Column="1" 
+                   FontSize="50"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   ></TextBlock>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="500"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Width="800">
+                <RelativePanel 
+                    Name="MediaPanel"
+                    PointerPressed="MediaPanel_PointerPressed"
+                    PointerEntered="MediaPanel_PointerEntered"
+                    PointerExited="MediaPanel_PointerExited"
+                >
+                    <MediaElement
+                        RelativePanel.AlignVerticalCenterWithPanel="True"
+                        Name="VideoPlace"
+                        Height="450"
+                        Width="400"
+                        Source="/Assets/Video/forth.mp4"
+                        AutoPlay="False"
+                        />
+                    <Button Name="BigControlPlayOrPause"
+                        RelativePanel.AlignHorizontalCenterWith="VideoPlace"
+                        RelativePanel.AlignVerticalCenterWith="VideoPlace"
+                        FontSize="50"
+                        Content="&#xE103;"
+                        FontFamily="Segoe MDL2 Assets"
+                        Click="BigControlPlayOrPause_Click"
+                        />
+                    <Image Name="VideoCut" 
+                           Source="/Assets/forth.jpg" 
+                           Opacity=".3"
+                           Height="450"
+                           Width="400" 
+                           Stretch="UniformToFill"
+                           RelativePanel.AlignVerticalCenterWith="VideoPlace"
+                           RelativePanel.RightOf="VideoPlace"/>
+                    <StackPanel Name="ControlPanel" RelativePanel.AlignBottomWith="VideoPlace" Orientation="Horizontal" Background="Gray" Width="400" >
+                        <Button 
+                            Name="PauseOrPlay"
+                            Content="&#xE102;"
+                            Click="PauseOrPlay_Click"
+                            FontFamily="Segoe MDL2 Assets"
+                            FontSize="20"
+                            Foreground="White"
+                            />
+                        <Button 
+                            Name="Stop"
+                            Content="&#xE71A;"
+                            Click="Stop_Click"
+                            FontFamily="Segoe MDL2 Assets"
+                            FontSize="20"
+                            Foreground="White"
+                            />
+                        <Button 
+                            Name="Next"
+                            Content="&#xE893;"
+                            Click="Next_Click"
+                            FontFamily="Segoe MDL2 Assets"
+                            FontSize="20"
+                            Foreground="White"
+                            />
+                    </StackPanel>
+                </RelativePanel>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Margin="0,20,0,0"  Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="A" Margin="0,0,10,0" 
+                        Click="PlayFirst"></Button>
+                <Button Content="B" Margin="0,0,10,0" 
+                        Click="PlaySec"></Button>
+                <Button Content="C" Margin="0,0,10,0" 
+                        Click="PlayThird"></Button>
+                <Button Content="D" Margin="0,0,10,0" 
+                        Click="PlayForth"></Button>
+                <Button Content="E" 
+                        Click="PlayFifth"></Button>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Page>

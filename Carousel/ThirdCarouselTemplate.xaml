@@ -1,0 +1,85 @@
+﻿<Page
+    x:Class="Carousel.ThirdCarouselTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Carousel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="ThirdCarousel Template" 
+                   Grid.Column="1" 
+                   FontSize="50"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   ></TextBlock>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="700"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Canvas Width="800" Name="MyCanvas" RenderTransformOrigin="0.5,0.5">
+                <StackPanel Orientation="Horizontal" Width="4000" Canvas.ZIndex="100" >
+                    <!--<Rectangle Fill="Beige" Width="800" Height="450"/>
+                    <Rectangle Fill="DarkOrange" Width="800" Height="450"/>
+                    <Rectangle Fill="LightBlue" Width="800" Height="450"/>
+                    <Rectangle Fill="LightPink" Width="800" Height="450"/>
+                    <Rectangle Fill="Azure" Width="800" Height="450"/>-->
+                    <MediaElement
+                        Name="first"
+                        Height="450"
+                        Width="800"
+                        Source="/Assets/Video/first.mp4"
+                        Volume="10"
+                        />
+                    <MediaElement
+                        Name="second"
+                        Height="450"
+                        Width="800"
+                        Source="/Assets/Video/second.mp4"
+                        />
+                    <MediaElement
+                        Name="third"
+                        Height="450"
+                        Width="800"
+                        Source="/Assets/Video/third.mp4"
+                        />
+                    <MediaElement
+                        Name="forth"
+                        Height="450"
+                        Width="800"
+                        Source="/Assets/Video/forth.mp4"
+                        />
+                    <MediaElement
+                        Name="fifth"
+                        Height="450"
+                        Width="800"
+                        Source="/Assets/Video/fifth.mp4"
+                        />
+                </StackPanel>
+            </Canvas>
+            <Button
+                Name="DynamicCarousel"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Margin="0,300,0,0"
+                Click="DynamicCarousel_Click"
+                Height="60"
+                Width="100"
+                Content="Shift"
+                />
+        </Grid>
+
+    </Grid>
+</Page>

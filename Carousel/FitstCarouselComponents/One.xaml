@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="Carousel.FitstCarouselComponents.One"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Carousel.FitstCarouselComponents"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <RelativePanel VerticalAlignment="Center" 
+                   HorizontalAlignment="center"
+                   Name="MediaPanel"
+                   PointerEntered="MediaPanel_PointerEntered"
+                   PointerExited="MediaPanel_PointerExited"
+                   >
+        <MediaElement Name="MyVideo"
+                    HorizontalAlignment="Center"
+                    Width="800"
+                    Height="450"
+                    VerticalAlignment="Center" Source="/Assets/Video/forth.mp4"
+                    PointerPressed="MyVideo_PointerPressed"
+        />
+        <Button Name="BigControlPlayOrPause"
+                RelativePanel.AlignHorizontalCenterWith="MyVideo"
+                RelativePanel.AlignVerticalCenterWith="MyVideo"
+                FontSize="50"
+                Content="&#xE103;"
+                FontFamily="Segoe MDL2 Assets"
+                Click="BigControlPlayOrPause_Click"
+                Foreground="White"
+                />
+        <StackPanel Name="ControlPanel" RelativePanel.AlignBottomWith="MyVideo" Orientation="Horizontal" Background="Gray" Width="800" >
+         
+            <Button 
+                Name="PauseOrPlay"
+                Content="&#xE103;"
+                Click="PauseOrPlay_Click"
+                FontFamily="Segoe MDL2 Assets"
+                FontSize="20"
+                Foreground="White"
+            />
+            <Button 
+                Name="Stop"
+                Content="&#xE71A;"
+                Click="Stop_Click"
+                FontFamily="Segoe MDL2 Assets"
+                FontSize="20"
+                Foreground="White"
+            />
+        </StackPanel>
+    </RelativePanel>
+</Page>

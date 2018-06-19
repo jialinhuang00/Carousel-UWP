@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="Carousel.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Carousel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel MinHeight="500"
+                       Grid.Column="0" 
+                       Grid.Row="1" 
+                       HorizontalAlignment="Center" 
+                       Margin="0,200,0,0">
+                <Button 
+                    Name="FirstCarouselTemplate" 
+                    FontSize="48" 
+                    Content="1" 
+                    Click="FirstCarouselTemplate_Click" 
+                    Height="80" 
+                    Width="80"
+                    Margin="00,0,0,10"
+            />
+            <Button 
+                Name="SecondCarouselTemplate" 
+                FontSize="48" 
+                Content="2" 
+                Click="SecondCarouselTemplate_Click" 
+                Height="80" 
+                Width="80"
+                Margin="00,0,0,10"
+            />
+            <Button 
+                Name="ThirdCarouselTemplate" 
+                FontSize="48" 
+                Content="3" 
+                Click="ThirdCarouselTemplate_Click"  
+                Height="80" 
+                Width="80"
+            />
+            
+        </StackPanel>
+        <Frame Grid.Column="1" Grid.Row="1" Name="CarouselAppFrame"/>
+    </Grid>
+</Page>
